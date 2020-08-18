@@ -7,8 +7,6 @@ services:
 #    ports:
 #          - 80:80
 #          - 9000:9000
-    volumes:
-          - ./logs:/var/log/nginx
     networks:
           - back
 
@@ -20,6 +18,7 @@ services:
           - 8888:8888
     volumes:
           - ./src/nginx-front:/etc/nginx/conf.d
+          - ./logs:/var/log/nginx
     links:
           - "web"
     depends_on:
